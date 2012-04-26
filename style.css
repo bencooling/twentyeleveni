@@ -1,0 +1,12 @@
+/*
+Theme Name:     twentyelevenchild
+Theme URI:      http://twentyelevenbaby.com
+Description:    twentyelevenchild theme - blank theme with a spinkle of twentyeleven goodness
+Author:         Ben Cooling
+Author URI:     http: //bcooling.com.au
+Template:       twentyeleven
+Version:        0.1.0
+*/
+
+/* @import url("../twentyeleven/rtl.css");  include right to left support */
+@import url("../twentyeleven/style.css");
