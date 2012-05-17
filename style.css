@@ -10,3 +10,67 @@ Version:        0.1.0
 
 /* @import url("../twentyeleven/rtl.css");  include right to left support */
 @import url("../twentyeleven/style.css");
+
+/* reset
+-------------------------------------------------------------- */
+
+body, input, textarea, select, p {
+  font:11px/14px "Lucida Sans Unicode", "Lucida Grande", sans-serif; font-weight:normal; color:#777
+}
+button,fieldset,img {border:none}
+ol, ul              {margin-left:20px}
+a                   {text-decoration:none; color:#006837}
+a:hover             {text-decoration:none; color:#006837}
+a, button           {cursor:pointer}
+input[type=hidden]  {display:none} /* Hide hidden inputs that are set to display:block in firefox */
+textarea            {
+  resize:none; /*Turn off safari resize */
+  overflow: auto; /* remove scrollbar from windows */
+}
+*:focus { outline:none } /* chrome orange focus */
+
+
+/* Twenty-eleven overwrite
+------------------------------------------- */
+
+body {
+  padding:0;
+}
+
+a {
+  color: white
+}
+a:hover {
+  text-decoration: none;
+}
+
+.singular.page .hentry, .singular .hentry {
+  padding: 0;
+}
+
+/* Utilty classes
+------------------------------------------- */
+
+.wrapper {
+  width: 980px; margin:0 auto; position:relative
+}
+
+.clear {
+  clear: both;
+}
+
+.container {
+  position: relative;
+}
+
+/* Typography
+------------------------------------------- */
+
+/* Header
+------------------------------------------- */
+
+/* Sidebar
+------------------------------------------- */
+
+/* Footer
+------------------------------------------- */
