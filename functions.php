@@ -24,29 +24,19 @@ if ( function_exists( 'register_nav_menus' ) ) {
   );
 }
 
+// override sidebars
+add_action( 'widgets_init', 'my_widgets_init', 11 );
+function my_widgets_init() {
+  
+  // Remove twenty-eleven widget areas (keeping Main Sidebar)
+  unregister_sidebar( 'sidebar-2' );
+  unregister_sidebar( 'sidebar-3' );
+  unregister_sidebar( 'sidebar-4' );
+  unregister_sidebar( 'sidebar-5' );
+}
+
 // remove post-formats... we not tumblr...
 remove_theme_support( 'post-formats');
-
-// Remove PHP code from header.php to functions.php
-function my_print_title(){
-  $title = wp_title('|', false, 'right');
-
-  // Add the blog name.
-  $title .= get_bloginfo('name');
-
-  // Add the blog description for the home/front page.
-  $site_description = get_bloginfo('description', 'display');
-  if ($site_description && ( is_home() || is_front_page() ))
-    $title .=  " | $site_description";
-
-  // Add a page number if necessary:
-  if ($paged >= 2 || $page >= 2)
-    $title .= ' | ' . sprintf(__('Page %s', 'twentyeleven'), max($paged, $page));
-  
-  return $title;
-}
-add_action( 'print_title', 'my_print_title' );
-
 
 /**
  * General Wordpress setup 
