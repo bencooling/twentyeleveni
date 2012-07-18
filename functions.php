@@ -11,6 +11,27 @@ function ask_twentyeleven_cleanup() {
   
   // Remove support for theme options
   remove_action( 'admin_menu', 'twentyeleven_theme_options_add_page' );
+
+  /** remove the existing excerpt filters that display: Continue Reading &rarr; */
+	remove_filter( 'get_the_excerpt', 'twentyeleven_custom_excerpt_more' );
+	remove_filter( 'excerpt_more', 'twentyeleven_auto_excerpt_more' );
+
+	function child_continue_reading_link() {
+		return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'read more <span class="meta-nav">&hellip;</span>', 'twentyeleven' ) . '</a>';
+	}
+
+	/** Add the new filters */
+    add_filter( 'excerpt_more', 'child_auto_excerpt_more' );
+	function child_auto_excerpt_more( $more ) {
+		return child_continue_reading_link();
+	}
+
+    add_filter( 'get_the_excerpt', 'child_custom_excerpt_more' );
+	function child_custom_excerpt_more( $output ) {
+		if ( has_excerpt() && ! is_attachment() ) $output .= child_continue_reading_link();
+		return $output;
+	}
+
   
 }
 
