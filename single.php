@@ -9,24 +9,21 @@
 
 get_header(); ?>
 
-		<div id="primary">
-			<div id="content" role="main">
+<div class="main">
+  <div class="inner">
+    <nav>
+      <p class="left"><?php previous_posts_link('&larr; Previous Post'); ?></p>
+      <p class="right"><?php next_posts_link('Next Post &rarr;'); ?></p>
+    </nav>
 
-				<?php while ( have_posts() ) : the_post(); ?>
-
-					<nav id="nav-single">
-						<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentyeleven' ); ?></h3>
-						<span class="nav-previous"><?php previous_post_link( '%link', __( '<span class="meta-nav">&larr;</span> Previous', 'twentyeleven' ) ); ?></span>
-						<span class="nav-next"><?php next_post_link( '%link', __( 'Next <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) ); ?></span>
-					</nav><!-- #nav-single -->
-
-					<?php get_template_part( 'content', 'single' ); ?>
-
-					<?php comments_template( '', true ); ?>
-
-				<?php endwhile; // end of the loop. ?>
-
-			</div><!-- #content -->
-		</div><!-- #primary -->
-
+    <?php if (have_posts()) : ?>  <?php while (have_posts()) : the_post(); ?>   
+      <h1><?php the_title(); ?></h1>
+      <?php the_content(); ?>
+      <?php comments_template( '', true ); ?>
+      <?php endwhile; ?>
+    <?php endif; ?>
+  </div>
+</div>
+  
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
