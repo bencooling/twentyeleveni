@@ -11,12 +11,16 @@
 // override twentyeleven action and filter hooks
 add_action( 'after_setup_theme', 'tweli_child_theme_setup', 11 );
 function tweli_child_theme_setup() {
+  // remove unneccessary theme customisation optionns
   remove_action( 'admin_menu', 'twentyeleven_theme_options_add_page' );
   remove_custom_image_header();
   remove_custom_background();
   remove_action( 'customize_register', 'twentyeleven_customize_register' );
   remove_action( 'widgets_init', 'twentyeleven_widgets_init' ); // Remove
   remove_theme_support( 'post-formats'); // Turn off post formats
+  
+  // remove sidebar & ephemera widget
+  remove_action( 'widgets_init', 'twentyeleven_widgets_init' );
 }
 
 // prevent wordpress from outputting meta tag version info
