@@ -30,7 +30,13 @@ textarea            {
   overflow: auto; /* remove scrollbar from windows */
 }
 *:focus { outline:none } /* chrome orange focus */
-
+input {
+  /* standardise input fields */
+  height:30px; line-height:30px; padding: 0px 10px; text-transform: none;
+  /* remove ios rounded input fields */
+  -webkit-appearance: none;
+  -webkit-border-radius:0px;
+}
 
 /* Twenty-eleven overwrite
 ------------------------------------------- */
