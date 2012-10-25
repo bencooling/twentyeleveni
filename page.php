@@ -14,14 +14,11 @@
 
 get_header(); ?>
 
-<div class="main">
-  <div class="inner">
-    <?php if (have_posts()) : ?>  <?php while (have_posts()) : the_post(); ?>   
-      <h1><?php the_title(); ?></h1>
-      <?php the_content(); ?>
-      <?php endwhile; ?>
-    <?php endif; ?>
-  </div>
+<div class="content">
+  <?php while ( have_posts() ) : the_post(); ?>
+    <?php get_template_part( 'content' ); ?>
+    <?php // comments_template( '', true ); ?>
+  <?php endwhile; ?>
 </div>
   
 <?php get_sidebar(); ?>

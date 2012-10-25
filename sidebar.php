@@ -8,8 +8,6 @@
  */
 ?>
 
-<div class="sidebar" role="complementary">
-  <div class="inner">
-    <?php dynamic_sidebar('right-sidebar'); ?>
-  </div>
+<div class="side right" role="complementary">
+  <?php dynamic_sidebar('right-sidebar'); ?>
 </div>

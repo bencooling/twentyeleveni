@@ -9,15 +9,11 @@
  * @since Twenty Eleven 1.0
  */
 ?>
-  <br class="clear" />
-</div><!-- /.wrapper -->
 
-<footer>
-  <div class="wrapper">
-    <div class="inner">
-      <p>&copy; Ben Cooling <?php date('Y'); ?></p>
-    </div>
-  </div>
+</div><!-- /.body -->
+
+<footer class="foot">
+  <p>&copy; Client Name <?php date('Y'); ?> | 0987 654 321 | <a href="bcooling.com.au">Gold Coast Web Developer</a></p>
 </footer>
 <?php wp_footer(); ?>
 </body>

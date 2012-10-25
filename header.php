@@ -9,38 +9,53 @@
  * @since Twenty Eleven 1.0
  */
 ?><!DOCTYPE html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!DOCTYPE html>
+<!-- Adapted from HTML5 Boilerplate conditional classes, added ie10 to condition -->
+<!--[if lt IE 7]>      <html class="lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html> <!--<![endif]-->
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<!--<meta name="viewport" content="width=device-width" />-->
 <title><?php wp_title(); ?></title>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
+<!-- Include Open Sans font by default-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 <?php
-  if ( is_singular() && get_option( 'thread_comments' ) )
-    wp_enqueue_script( 'comment-reply' );
+  if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
   wp_head();
 ?>
 </head>
 <body <?php body_class(); ?>>
-  <header role="banner">
-    <div class="wrapper">
-      <div class="inner">
-        <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-        <h3><?php bloginfo( 'description' ); ?></h3>
-      </div>
-    </div>
-    <nav>
-      <?php // Add a menu to enable the container class ?>
-      <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'top-menu', 'container_class' => 'wrapper' )); ?>
-    </nav>
+  <div class="top top-menu-wrap">
+    <?php // Add a menu to enable the container class ?>
+    <?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_class' => 'top-menu wrap', 'container' => false )); ?>
+  </div>
+
+  <header class="head wrap">
+    <hgroup>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+        <h1 id="site-title"><?php bloginfo( 'name' ); ?></h1>
+      </a>
+      <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+    </hgroup>
   </header>
-  <div class="wrapper" id="body">
+
+  <div class="featured-wrap wrap">
+    <div class="featured">
+      <img src="http://flickholdr.com/980/400/lamborghini" alt="Placeholder image from flickholdr.com" />
+      <img src="http://flickholdr.com/980/400/ferrari" alt="Placeholder image from flickholdr.com" />
+    </div>
+  </div>
+
+  <nav class="nav wrap nav-menu-wrap">
+    <?php // Add a menu to enable the container class ?>
+    <?php wp_nav_menu( array( 'theme_location' => 'nav', 'menu_class' => 'nav-menu', 'container' => false )); ?>
+  </nav>
+
+  <div class="body group wrap">

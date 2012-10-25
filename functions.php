@@ -8,17 +8,20 @@
  * - Add script support
  */
 
-// override twentyeleven action and filter hooks
+/*
+ * overriding twentyeleven action and filter hooks
+ */
 add_action( 'after_setup_theme', 'tweli_child_theme_setup', 11 );
 function tweli_child_theme_setup() {
-  // remove unneccessary theme customisation optionns
-  remove_action( 'admin_menu', 'twentyeleven_theme_options_add_page' );
-  remove_custom_image_header();
-  remove_custom_background();
-  remove_action( 'customize_register', 'twentyeleven_customize_register' );
-  remove_action( 'widgets_init', 'twentyeleven_widgets_init' ); // Remove
-  remove_theme_support( 'post-formats'); // Turn off post formats
+  remove_theme_support('custom-header');
+  remove_theme_support('custom-background');
+  remove_action('admin_menu', 'twentyeleven_theme_options_add_page');
+  remove_action('customize_register', 'twentyeleven_customize_register');
+  unregister_nav_menu( 'primary' ); // Remove Primary menu namespace
   
+  remove_action( 'widgets_init', 'twentyeleven_widgets_init' ); // Remove all twentyeleven widgets?
+  // remove_theme_support( 'post-formats'); // Turn off post formats // Remove post formats?
+
   // remove sidebar & ephemera widget
   remove_action( 'widgets_init', 'twentyeleven_widgets_init' );
 }
@@ -26,16 +29,18 @@ function tweli_child_theme_setup() {
 // prevent wordpress from outputting meta tag version info
 remove_action('wp_header', 'wp_generator');
 
-// register two nav_menus: primary and footer
-register_nav_menus(array('primary' => 'Primary','footer' => 'Footer'));
+// register three nav_menus: top, nav
+register_nav_menus(array('top'=>'Top','nav'=>'Navigation'));
 
 // register single sidebar: sidebar
 register_sidebar(array(
-  'name' => __( 'Right Hand Sidebar' ),
-  'id' => 'right-sidebar',
-  'description' => __( 'Widgets in this area will be shown on the right-hand side.' ),
+  'name' => __( 'Right Sidebar' ),
+  'id' => 'side',
+  'description' => __( 'Widgets in this area will be shown on the side.' ),
   'before_title' => '<h6>',
-  'after_title' => '</h6>'
+  'after_title' => '</h6>',
+  'before_widget' => '<aside id="%1$s" class="well widget %2$s">',
+  'after_widget' => '</aside>',
 ));
 
 // add the page title as a body class
@@ -65,9 +70,22 @@ function tweli_enqueue_scripts() {  wp_enqueue_script('jquery');
   wp_enqueue_style('slimbox2', get_stylesheet_directory_uri() . '/js/slimbox2/style.css');
   
   // orbit
-  if (is_page_template('home.php') || is_page_template('gallery.php')){  // page template specific
-    wp_enqueue_style( 'orbit-css', get_stylesheet_directory_uri() . '/orbit/orbit-1.2.3.css' );
-    wp_enqueue_script( 'orbit-js', get_stylesheet_directory_uri() . '/orbit/jquery.orbit-1.2.3.min.js', 'jquery');
+  // if (is_page_template('home.php') || is_page_template('gallery.php')){  // page template specific
+  if (is_home() || is_front_page()){
+    wp_enqueue_style( 'orbit-css', get_stylesheet_directory_uri() . '/js/orbit/orbit-1.2.3.css' );
+    wp_enqueue_script( 'orbit-js', get_stylesheet_directory_uri() . '/js/orbit/jquery.orbit-1.2.3.min.js', 'jquery');
   }
 
 }
+
+/**
+ * Add Home to Pages in Administration > Appearance > Menus
+ */
+add_filter( 'wp_page_menu_args', 'tweli_page_menu_args' );
+function tweli_page_menu_args( $args ) {
+  $args['show_home'] = true;
+  return $args;
+}
+
+// Remove admin bar I never ever ever use it
+add_filter('show_admin_bar', '__return_false');

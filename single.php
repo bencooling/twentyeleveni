@@ -9,20 +9,15 @@
 
 get_header(); ?>
 
-<div class="main">
-  <div class="inner">
+<div class="content">
+  <?php while ( have_posts() ) : the_post(); ?>
+    <?php get_template_part( 'content' ); ?>
+    <?php comments_template( '', true ); ?>
     <nav>
       <p class="left"><?php previous_posts_link('&larr; Previous Post'); ?></p>
       <p class="right"><?php next_posts_link('Next Post &rarr;'); ?></p>
     </nav>
-
-    <?php if (have_posts()) : ?>  <?php while (have_posts()) : the_post(); ?>   
-      <h1><?php the_title(); ?></h1>
-      <?php the_content(); ?>
-      <?php comments_template( '', true ); ?>
-      <?php endwhile; ?>
-    <?php endif; ?>
-  </div>
+  <?php endwhile; ?>
 </div>
   
 <?php get_sidebar(); ?>

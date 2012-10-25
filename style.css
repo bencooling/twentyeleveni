@@ -19,38 +19,65 @@ Drop down navigation
 
 /* reset
 -------------------------------------------------------------- */
-body, input, textarea, select, p {
-  /* General typography */
+body, input, textarea, select, p, span, a, img, ul, ol, li {
+  margin:0; padding:0;
 }
 button,fieldset,img { border:none }
-ol, ul              { margin-left:20px }
+ol, ul              { margin-left:0px }
 a, button           { cursor:pointer }
 textarea            {
   resize:none; /*Turn off safari resize */
   overflow: auto; /* remove scrollbar from windows */
 }
 *:focus { outline:none } /* chrome orange focus */
-input {
+input[type=text] {
   /* standardise input fields */
   height:30px; line-height:30px; padding: 0px 10px; text-transform: none;
   /* remove ios rounded input fields */
   -webkit-appearance: none;
   -webkit-border-radius:0px;
 }
+.group:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+  }
+* html .group             { zoom: 1; } /* IE6 */
+*:first-child+html .group { zoom: 1; } /* IE7 */
 
-/* Twenty-eleven overwrite
+/* General Structure
 ------------------------------------------- */
-body {
-  padding:0; background-color:#eeeeee;
+.top {
+  height:30px;
+  background-color:#111;
 }
-/* Only have default par padding for main content */
-.sidebar p, footer p, header p {
-  margin:0;
+.head {
+  height:100px;
+  background-color:#f7f9f8;
+}
+.featured-wrap {
+  background-color:#111;
+}
+.nav {
+  min-height:30px;
+  background-color:#333;
+}
+.body {
+  background-color:#f7f9f8;
+}
+.side {
+  background-color:#aaa;
+}
+.foot {
+  height:300px;
+  background-color:#777; color:white;
 }
 
 /* Utilty classes
 ------------------------------------------- */
-.wrapper {
+.wrap {
   width: 980px; margin:0 auto; position:relative
 }
 .clear {
@@ -59,93 +86,70 @@ body {
 .container {
   position: relative;
 }
-
-
-/* twentyeleveni
-------------------------------------------- */
-.inner {
-  padding:20px;
+.foot {
+  text-align:center;
 }
-nav {
-  background-color:#74A9D1;
-}
-nav .sub-menu li {
-  background-color:#6897BB;
-}
-nav a {
-  color:white;
-}
-nav a:hover {
-  text-decoration: none; background-color:rgba(255,255,255,0.1);
-}
-.wrapper {
-  background-color:rgba(0,0,0,0.1);
-}
-#body {
-  background-color:white;
-}
-.sidebar {
-  background-color:rgba(0,0,0,0.1);
-}
-footer {
-  background-color:#CBCBCB; clear:both;
-}
-footer .inner {
-  text-align: center;
-}
-
-/* Sticky footer with equal sidebar + main columns
-------------------------------------------- */
-
 
 /* Typography
 ------------------------------------------- */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-size:24px;
+}
 
 /* Structure
 ------------------------------------------- */
+body {
+  background-color:#fff; color:#53524f;
+}
 .main {
   float:left; width: 600px;
 }
-.sidebar {
+.side {
   float:right; width:340px;
 }
 
 /* Header
 ------------------------------------------- */
 
-/* Navigation
+/* Menus
+ *  - Centered menus
 ------------------------------------------- */
-/* All levels */
-nav ul.top-menu, nav ul.sub-menu {
-  margin:0; list-style:none;
-}
-nav li {
-  cursor:pointer; position:relative;
-}
-nav li a {
-  display:block; padding:10px 20px;
-}
-/* Top-level */
-nav ul.top-menu {
+.top-menu-wrap,
+.nav-menu-wrap {
   text-align:center;
 }
-nav ul.top-menu li {
-  display:inline-block;
+
+.top-menu,
+.nav-menu {
+  list-style:none; display:inline-block; height:100%;
 }
-/* Sub-level */
-nav ul.sub-menu{
-  position:absolute; left:-99999em; text-align:left; z-index:999;
+.top-menu li,
+.nav-menu li {
+  display:block; float:left; height:100%;
 }
-nav ul.sub-menu li {
-  display:block;
+.top-menu a,
+.nav-menu a {
+  display:block; padding:0 10px; color:white; height:100%;
 }
-/* Drop-down event */
-ul.top-menu li:hover ul.sub-menu {
-   left:0;
+
+.top-menu a {
+  line-height:30px; font-size:13px;
 }
 
 /* Sidebar
 ------------------------------------------- */
+.side ul {
+  list-style:none;
+}
+.side li,
+.side p,
+.side a,
+.side aside {
+  color:white;
+}
 
 /* Footer
 ------------------------------------------- */
