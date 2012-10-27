@@ -9,15 +9,9 @@
 
 get_header(); ?>
 
-<div id="main">
-
-  <?php if (have_posts()) : ?>  <?php while (have_posts()) : the_post(); ?>   
-    <h1><?php the_title(); ?></h1>
-    <p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'twentyeleven' ); ?></p>
-    <?php get_search_form(); ?>
-    <?php endwhile; ?>
-  <?php endif; ?>
-
+<div class="main">
+  <h2><?php _e( 'Nothing Found', 'twentyeleven' ); ?></h2>
+  <?php get_template_part( 'content', 'notfound' ); ?>
 </div>
   
 <?php get_sidebar(); ?>

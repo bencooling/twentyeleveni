@@ -55,23 +55,21 @@ input[type=text] {
 }
 .head {
   height:100px;
-  background-color:#f7f9f8;
+  background-color:#F7F9F8;
 }
 .featured-wrap {
   background-color:#111;
 }
 .nav {
-  min-height:30px;
-  background-color:#333;
+  height:40px;
+  background-color:#2C2F31;
 }
 .body {
   background-color:#f7f9f8;
 }
-.side {
-  background-color:#aaa;
-}
+.side {}
 .foot {
-  height:300px;
+  height:50px; line-height:50px; font-size:12px; text-align:center;
   background-color:#777; color:white;
 }
 
@@ -86,69 +84,212 @@ input[type=text] {
 .container {
   position: relative;
 }
-.foot {
-  text-align:center;
-}
 
 /* Typography
 ------------------------------------------- */
-body {
-  font-family: 'Open Sans', sans-serif;
-}
 h1,h2,h3,h4,h5,h6 {
-  font-size:24px;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+h1 {
+  font-size: 48px; line-height: 54px; 
+  color: #C3CDD3; font-weight: lighter;
+}
+h2 {
+  font-size: 36px; line-height: 54px; 
+  color: #C3CDD3;
+}
+h3 {
+  font-size: 30px; line-height: 36px; 
+  color: #C3CDD3;
+}
+h5 {
+  font: bold 14px/14px 'Helvetica Neue', sans-serif; text-align: right; 
+  color: #2C2F31;
+}
+h6 {
+  padding: 5px 10px; color: #2C2F31; font-size:16px; background-color:#DEE0DF; border-radius:5px 5px 0 0;
+}
+body a, body a:hover {
+  color:#8C9CA5; text-decoration: none;
+}
+p, blockquote {
+  margin-bottom:10px;
 }
 
 /* Structure
 ------------------------------------------- */
 body {
-  background-color:#fff; color:#53524f;
+  background:#fff url('images/furley_bg.png'); color: #2C2F31; background:white; font-size:14px;
 }
 .main {
-  float:left; width: 600px;
+  float:left; width: 600px; padding:20px;
 }
 .side {
-  float:right; width:340px;
+  float:right; width:300px;  padding:20px;
 }
 
 /* Header
 ------------------------------------------- */
+.head hgroup {
+  padding: 20px 0 0 15px; display: inline-block;
+}
 
 /* Menus
  *  - Centered menus
 ------------------------------------------- */
-.top-menu-wrap,
-.nav-menu-wrap {
-  text-align:center;
+.top,
+.nav,
+/*.side h6,*/
+.foot {
+  background-image: -webkit-linear-gradient(bottom, #2C2F31 0%, #111 100%);
+  background-image: -moz-linear-gradient(bottom, #2C2F31 0%, #111 100%);
+  background-image: -o-linear-gradient(bottom, #2C2F31 0%, #111 100%);
+  background-image: -ms-linear-gradient(bottom, #2C2F31 0%, #111 100%);
+  background-image: linear-gradient(bottom, #2C2F31 0%, #111 100%);
 }
 
-.top-menu,
-.nav-menu {
-  list-style:none; display:inline-block; height:100%;
+nav.nav-menu-wrap {
+  text-align: center;
+}
+nav.nav-menu-wrap ul.nav-menu {
+  display:inline-block;
+}
+nav.nav-menu-wrap ul.nav-menu li {
+  display:block; float:left;
+}
+
+.top-menu, .top ul,
+.nav-menu, .nav ul {
+  list-style:none; height:100%; text-align:center;
+}
+.top-menu ul {
+  float:right;
 }
 .top-menu li,
 .nav-menu li {
-  display:block; float:left; height:100%;
+  display:inline-block; height:100%;
+}
+.top-menu li:first-child,
+.nav-menu li:first-child {
+  border-left: none;
+}
+.top-menu li:last-child,
+.nav-menu li:last-child {
+  border-right: none;
 }
 .top-menu a,
 .nav-menu a {
-  display:block; padding:0 10px; color:white; height:100%;
+  display:block; padding:0 15px; color:white; height:100%;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+}
+.top-menu a:hover,
+.nav-menu a:hover {
+  text-decoration: none; background-color: rgba(255,255,255,0.1);
 }
 
 .top-menu a {
-  line-height:30px; font-size:13px;
+  line-height:30px; font-size:12px;
 }
+.nav-menu a {
+  line-height:40px; font-size:15px; font-family: 'Open Sans Condensed', sans-serif;
+}
+
+/* Slideshow
+------------------------------------------- */
+.content {
+  display:block; width:980px !important; height:400px !important; overflow:hidden; /* Remove: only for purpose of flickr placholder  */
+}
+.featured { 
+  width: 980px;
+  height: 400px;
+  background: #111 url('js/orbit/orbit/loading.gif') no-repeat center center;
+  overflow: hidden; }
+.featured>img,  
+.featured>div,
+.featured>a { display: none; }
 
 /* Sidebar
 ------------------------------------------- */
 .side ul {
   list-style:none;
 }
-.side li,
-.side p,
-.side a,
+.side aside ul {
+  padding:10px;
+}
 .side aside {
-  color:white;
+  background-color:#EAECEB;
+  border-radius: 5px;
+}
+.side aside a {
+  font-weight: normal;
+}
+
+/* Search widget */
+.side aside.widget_search {
+  -webkit-box-shadow:none;
+  box-shadow:none;
+}
+.side aside.widget_search form {
+  position:relative; height:32px;
+}
+.side aside.widget_search #s {
+  position: absolute; left: 0; right: 0; width:auto;
+  border:0px; box-shadow:none;
+}
+
+/* Article
+------------------------------------------- */
+body .main article {
+  padding-top:20px; border-top:1px solid #EAECEB; 
+  margin:0px; border-bottom:0px; padding-bottom: 20px;
+}
+body.singular .body article,
+body.singular.page .body article {
+  padding-top:0px;
+}
+.article-content {
+  float:right; width:410px;
+}
+.article-meta span,
+.article-date span {
+  font-size: 12px; margin-right:10px; padding: 10px;
+  background-color:#EAECEB;
+  border-radius: 5px;
+}
+.article-date {
+  margin: 5px 0 10px 0;
+}
+.attachment-post-thumbnail {
+  float:left; margin-right:10px;
+}
+.attachment-post-thumbnail,
+.frame {
+  padding:10px;
+  background-color:#EAECEB;
+  border:1px solid #DADADA;
+}
+body .article-meta span a,
+body .article-date span a{
+  color:#444;
+}
+.main article:first-child {
+  border-top:0px; 
+}
+#comments {
+  margin-top:50px;
+}
+#comments h3 {
+  margin-bottom:20px;
+}
+#respond {
+  background-color:#EAECEB; border:0px;
+}
+body form#commentform p.comment-form-comment label {
+  background-color: #DEE0DF;
+}
+body #comment {
+  border-color:#DEE0DF;
 }
 
 /* Footer
@@ -156,3 +297,12 @@ body {
 
 /* Home
 ------------------------------------------- */
+
+
+/* Font Icons
+------------------------------------------- */
+/* Use the following CSS code if you want to have a class per icon */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  padding-right:5px;
+  color:#8C9CA5;
+}

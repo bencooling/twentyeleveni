@@ -24,6 +24,15 @@ function tweli_child_theme_setup() {
 
   // remove sidebar & ephemera widget
   remove_action( 'widgets_init', 'twentyeleven_widgets_init' );
+
+  // Remove automatic filter length, add custom
+  remove_filter( 'excerpt_length', 'twentyeleven_excerpt_length' );
+  add_filter('excerpt_length', 'tweli_excerpt_length');
+  function tweli_excerpt_length(){
+    return 26;
+  }
+ 
+
 }
 
 // prevent wordpress from outputting meta tag version info
@@ -39,7 +48,7 @@ register_sidebar(array(
   'description' => __( 'Widgets in this area will be shown on the side.' ),
   'before_title' => '<h6>',
   'after_title' => '</h6>',
-  'before_widget' => '<aside id="%1$s" class="well widget %2$s">',
+  'before_widget' => '<aside id="%1$s" class="widget %2$s">',
   'after_widget' => '</aside>',
 ));
 

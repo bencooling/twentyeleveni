@@ -24,15 +24,16 @@
 <!--[if lt IE 9]>
   <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-<!-- Include Open Sans font by default-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!-- Include Open Sans font and Icon Font -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic|Open+Sans:300italic,400italic,700italic,800italic,400,800,700,300' rel='stylesheet' type='text/css'>
+<link href='<?php echo get_bloginfo('stylesheet_directory'); ?>/icomoon/style.css' rel='stylesheet' type='text/css'>
 <?php
   if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
   wp_head();
 ?>
 </head>
 <body <?php body_class(); ?>>
-  <div class="top top-menu-wrap">
+  <div class="top">
     <?php // Add a menu to enable the container class ?>
     <?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_class' => 'top-menu wrap', 'container' => false )); ?>
   </div>
@@ -40,18 +41,21 @@
   <header class="head wrap">
     <hgroup>
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-        <h1 id="site-title"><?php bloginfo( 'name' ); ?></h1>
+        <h1><?php bloginfo( 'name' ); ?></h1>
       </a>
-      <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+      <h5><?php bloginfo( 'description' ); ?></h5>
     </hgroup>
   </header>
 
+  <?php if (is_home() || is_front_page()): ?>
   <div class="featured-wrap wrap">
     <div class="featured">
-      <img src="http://flickholdr.com/980/400/lamborghini" alt="Placeholder image from flickholdr.com" />
-      <img src="http://flickholdr.com/980/400/ferrari" alt="Placeholder image from flickholdr.com" />
+      <div class="content"><a href="http://www.flickr.com/photos/30700107@N02/5438025369/" title="Fingal Head by Dean Vuksanovic, on Flickr"><img src="http://farm5.staticflickr.com/4113/5438025369_81cd5ec11f_b.jpg" width="1024" height="683" alt="Fingal Head"></a></div>
+      <div class="content"><a href="http://www.flickr.com/photos/30700107@N02/5419017565/" title="Currumbin Rocks Sunrise by Dean Vuksanovic, on Flickr"><img src="http://farm6.staticflickr.com/5257/5419017565_1dda787dcb_b.jpg" width="1024" height="683" alt="Currumbin Rocks Sunrise"></a></div>
+      <div class="content"><a href="http://www.flickr.com/photos/30700107@N02/5767011188/" title="Miami Headland Sunrise May 2011 by Dean Vuksanovic, on Flickr"><img src="http://farm4.staticflickr.com/3219/5767011188_3318480951_b.jpg" width="1000" height="667" alt="Miami Headland Sunrise May 2011"></a></div>
     </div>
   </div>
+  <?php endif; ?>
 
   <nav class="nav wrap nav-menu-wrap">
     <?php // Add a menu to enable the container class ?>

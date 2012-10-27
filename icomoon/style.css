@@ -1,0 +1,156 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.svg#icomoon') format('svg'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: 'icomoon';
+	font-style: normal;
+	speak: none;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+  padding-right:5px;
+  color:#8C9CA5;
+}
+.icon-home:before {
+	content: "\21";
+}
+.icon-home-2:before {
+	content: "\22";
+}
+.icon-pictures:before {
+	content: "\23";
+}
+.icon-pencil:before {
+	content: "\25";
+}
+.icon-pencil-2:before {
+	content: "\26";
+}
+.icon-tag:before {
+	content: "\27";
+}
+.icon-user:before {
+	content: "\28";
+}
+.icon-user-2:before {
+	content: "\29";
+}
+.icon-comments:before {
+	content: "\2a";
+}
+.icon-printer:before {
+	content: "\2b";
+}
+.icon-calendar:before {
+	content: "\2c";
+}
+.icon-phone:before {
+	content: "\2d";
+}
+.icon-cart:before {
+	content: "\2e";
+}
+.icon-mail:before {
+	content: "\2f";
+}
+.icon-picture:before {
+	content: "\24";
+}
+.icon-cog:before {
+	content: "\30";
+}
+.icon-remove:before {
+	content: "\31";
+}
+.icon-cancel:before {
+	content: "\32";
+}
+.icon-star:before {
+	content: "\33";
+}
+.icon-star-2:before {
+	content: "\34";
+}
+.icon-star-3:before {
+	content: "\35";
+}
+.icon-heart:before {
+	content: "\39";
+}
+.icon-heart-2:before {
+	content: "\38";
+}
+.icon-checkmark:before {
+	content: "\3a";
+}
+.icon-plus:before {
+	content: "\36";
+}
+.icon-minus:before {
+	content: "\37";
+}
+.icon-comments-2:before {
+	content: "\3b";
+}
+.icon-location:before {
+	content: "\3c";
+}
+.icon-compass:before {
+	content: "\3d";
+}
+.icon-database:before {
+	content: "\3e";
+}
+.icon-locked:before {
+	content: "\3f";
+}
+.icon-unlocked:before {
+	content: "\40";
+}
+.icon-download:before {
+	content: "\41";
+}
+.icon-thumbs-down:before {
+	content: "\42";
+}
+.icon-thumbs-up:before {
+	content: "\43";
+}
+.icon-pie:before {
+	content: "\44";
+}
+.icon-new:before {
+	content: "\45";
+}
+.icon-folder:before {
+	content: "\46";
+}
+.icon-earth:before {
+	content: "\47";
+}
+.icon-gift:before {
+	content: "\48";
+}
+.icon-envelope:before {
+	content: "\49";
+}
+.icon-paperclip:before {
+	content: "\4a";
+}
