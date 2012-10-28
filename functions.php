@@ -69,17 +69,12 @@ function tweli_enqueue_scripts() {  wp_enqueue_script('jquery');
   // reveal
   wp_enqueue_script('reveal', get_stylesheet_directory_uri() . '/js/reveal/jquery.reveal.js', array('jquery'));
   wp_enqueue_style('reveal', get_stylesheet_directory_uri() . '/js/reveal/reveal.css');
-
-  // thickbox
-  wp_enqueue_style('thickbox');
-  wp_enqueue_script('thickbox');
   
   // slimbox
   wp_enqueue_script('slimbox2', get_stylesheet_directory_uri() . '/js/slimbox2/script.js', array('jquery'));
   wp_enqueue_style('slimbox2', get_stylesheet_directory_uri() . '/js/slimbox2/style.css');
   
   // orbit
-  // if (is_page_template('home.php') || is_page_template('gallery.php')){  // page template specific
   if (is_home() || is_front_page()){
     wp_enqueue_style( 'orbit-css', get_stylesheet_directory_uri() . '/js/orbit/orbit-1.2.3.css' );
     wp_enqueue_script( 'orbit-js', get_stylesheet_directory_uri() . '/js/orbit/jquery.orbit-1.2.3.min.js', 'jquery');
