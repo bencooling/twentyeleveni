@@ -13,8 +13,8 @@
  */
 add_action( 'after_setup_theme', 'tweli_child_theme_setup', 11 );
 function tweli_child_theme_setup() {
-  remove_theme_support('custom-header');
-  remove_theme_support('custom-background');
+  $GLOBALS['custom_background']   = '__return_false'; // @remove_theme_support('custom-background');
+  $GLOBALS['custom_image_header'] = '__return_false'; // @remove_theme_support('custom-header');
   remove_action('admin_menu', 'twentyeleven_theme_options_add_page');
   remove_action('customize_register', 'twentyeleven_customize_register');
   unregister_nav_menu( 'primary' ); // Remove Primary menu namespace
@@ -43,9 +43,9 @@ register_nav_menus(array('top'=>'Top','nav'=>'Navigation'));
 
 // register single sidebar: sidebar
 register_sidebar(array(
-  'name' => __( 'Right Sidebar' ),
+  'name' => __( 'Right Sidebar', 'twentyeleven' ),
   'id' => 'side',
-  'description' => __( 'Widgets in this area will be shown on the side.' ),
+  'description' => __( 'Widgets in this area will be shown on the side.', 'twentyeleven' ),
   'before_title' => '<h6>',
   'after_title' => '</h6>',
   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -93,3 +93,14 @@ function tweli_page_menu_args( $args ) {
 
 // Remove admin bar I never ever ever use it
 add_filter('show_admin_bar', '__return_false');
+
+/**
+ * Setup My Child Theme's textdomain.
+ *
+ * Declare textdomain for this child theme.
+ * Translations can be filed in the /languages/ directory.
+ */
+function my_child_theme_setup() {
+  load_child_theme_textdomain( 'my-child-theme', get_stylesheet_directory() . '/languages' );
+}
+add_action( 'after_setup_theme', 'my_child_theme_setup' );
