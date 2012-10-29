@@ -131,7 +131,7 @@ body {
 /* Header
 ------------------------------------------- */
 .head hgroup {
-  padding: 20px 0 0 15px; display: inline-block;
+  padding: 20px 0 0 15px; display: inline-block; 
 }
 
 /* Menus
@@ -316,4 +316,15 @@ body #comment,
 [class^="icon-"]:before, [class*=" icon-"]:before {
   padding-right:5px;
   color:#8C9CA5;
+}
+
+
+/* Internet Explorer 
+------------------------------------------- */
+/* Display:inline-block fixes */
+.lt-ie8 .head hgroup,
+.lt-ie8 nav.nav-menu-wrap ul.nav-menu,
+.lt-ie8 .top-menu li,
+.lt-ie8 .nav-menu li {
+  zoom: 1; *display: inline;
 }
