@@ -21,7 +21,10 @@ get_header(); ?>
     <?php get_template_part( 'content', 'listing' ); ?>
   <?php endwhile; ?>
   </div>
-</div>
+
+  <?php twentyeleven_content_nav( 'nav-below' ); ?>
   
+</div>
+
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

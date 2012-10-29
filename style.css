@@ -23,7 +23,7 @@ body, input, textarea, select, p, span, a, img, ul, ol, li {
   margin:0; padding:0;
 }
 button,fieldset,img { border:none }
-ol, ul              { margin-left:0px }
+ol, ul              { margin-left:0px; padding-left: 20px; }
 a, button           { cursor:pointer }
 textarea            {
   resize:none; /*Turn off safari resize */
