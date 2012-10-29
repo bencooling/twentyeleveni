@@ -124,6 +124,9 @@ body {
 .main {
   float:left; width: 600px; padding:20px;
 }
+.attachment .main {
+  width:940px;
+}
 .side {
   float:right; width:300px;  padding:20px;
 }
@@ -260,8 +263,11 @@ body.singular.page .body article {
   background-color:#EAECEB;
   border-radius: 5px;
 }
+.article-meta span.icon {
+  display:inline-block; margin-bottom: 5px;
+}
 .article-date {
-  margin: 5px 0 10px 0;
+  margin: 10px 0 15px 0;
 }
 .attachment-post-thumbnail,
 img.avatar {
@@ -325,6 +331,7 @@ body #comment,
 .lt-ie8 .head hgroup,
 .lt-ie8 nav.nav-menu-wrap ul.nav-menu,
 .lt-ie8 .top-menu li,
-.lt-ie8 .nav-menu li {
+.lt-ie8 .nav-menu li,
+.lt-ie8 .article-meta span.icon {
   zoom: 1; *display: inline;
 }
