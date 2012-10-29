@@ -14,7 +14,7 @@
 ?>
 	<?php if (post_password_required()): ?>
     <div id="comments">
-      <p class="nopassword"><?php _e('This post is password protected. Enter the password to view any comments.', 'twentyeleven'); ?></p>
+      <h6><?php _e('This post is password protected. Enter the password to view any comments.', 'twentyeleven'); ?></h6>
     </div>
   <?php return; endif; ?>
 
@@ -29,7 +29,7 @@
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'twentyeleven' ); ?></h1>
+			<h2 class="assistive-text"><?php _e( 'Comment navigation', 'twentyeleven' ); ?></h2>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'twentyeleven' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'twentyeleven' ) ); ?></div>
 		</nav>
@@ -49,7 +49,7 @@
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'twentyeleven' ); ?></h1>
+			<h2 class="assistive-text"><?php _e( 'Comment navigation', 'twentyeleven' ); ?></h2>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'twentyeleven' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'twentyeleven' ) ); ?></div>
 		</nav>
@@ -61,7 +61,7 @@
 		 */
 		elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="nocomments"><?php _e( 'Comments are closed.', 'twentyeleven' ); ?></p>
+		<h6><?php _e( 'Comments are closed.', 'twentyeleven' ); ?></h6>
 	<?php endif; ?>
 
 	<?php comment_form(); ?>

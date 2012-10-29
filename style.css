@@ -50,12 +50,10 @@ input[type=text] {
 /* General Structure
 ------------------------------------------- */
 .top {
-  height:30px;
-  background-color:#111;
+  height:30px; background-color:#111;
 }
 .head {
-  height:100px;
-  background-color:#F7F9F8;
+  height:100px; background-color:#F7F9F8;
 }
 .featured-wrap {
   background-color:#111;
@@ -69,8 +67,7 @@ input[type=text] {
 }
 .side {}
 .foot {
-  height:50px; line-height:50px; font-size:12px; text-align:center;
-  background-color:#777; color:white;
+  height:50px; line-height:50px; font-size:12px; text-align:center; background-color:#777; color:white;
 }
 
 /* Utilty classes
@@ -107,7 +104,10 @@ h5 {
   color: #2C2F31;
 }
 h6 {
-  padding: 5px 10px; color: #2C2F31; font-size:16px; background-color:#DEE0DF; border-radius:5px 5px 0 0;
+  padding: 5px 10px; color: #2C2F31; font-size:16px; background-color:#DEE0DF; border-radius:5px; text-align: center
+}
+.side h6 {
+  border-radius:5px 5px 0 0;
 }
 body a, body a:hover {
   color:#8C9CA5; text-decoration: none; cursor:pointer;
@@ -163,14 +163,15 @@ nav.nav-menu-wrap ul.nav-menu li {
 
 .top-menu, .top ul,
 .nav-menu, .nav ul {
-  list-style:none; height:100%; text-align:center;
+  list-style:none; text-align:center; padding:0px;
 }
 .top-menu ul {
   float:right;
 }
 .top-menu li,
 .nav-menu li {
-  display:inline-block; height:100%;
+  display:inline-block; height:100%; 
+  position:relative; z-index:1;
 }
 .top-menu li:first-child,
 .nav-menu li:first-child {
@@ -183,8 +184,7 @@ nav.nav-menu-wrap ul.nav-menu li {
 .top-menu a,
 .nav-menu a {
   display:block; padding:0 15px; color:white; height:100%;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  border-right: 1px solid rgba(0, 0, 0, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.1); border-right: 1px solid rgba(0, 0, 0, 0.5);
 }
 .top-menu a:hover,
 .nav-menu a:hover {
@@ -197,20 +197,43 @@ nav.nav-menu-wrap ul.nav-menu li {
 .nav-menu a {
   line-height:40px; font-size:15px; font-family: 'Open Sans Condensed', sans-serif;
 }
-
-/* Slideshow
-------------------------------------------- */
-.content {
-  display:block; width:980px !important; height:400px !important; overflow:hidden; /* Remove: only for purpose of flickr placholder  */
+/* Dropdown support */
+ul.children {
+  position:absolute; left:-9999em; z-index:2; width:188px; height:auto;
 }
-.featured { 
-  width: 980px;
-  height: 400px;
-  background: #111 url('js/orbit/orbit/loading.gif') no-repeat center center;
-  overflow: hidden; }
-.featured>img,  
-.featured>div,
-.featured>a { display: none; }
+.top-menu li:hover > ul.children,
+.nav-menu li:hover > ul.children {
+  left:0px;
+}
+.nav-menu li:hover > ul.children {
+  top:40px;
+}
+.top-menu li:hover > ul.children {
+  top:30px;
+}
+ul.children li {
+  position:relative; z-index:3; display:block; background-color: #8C9CA5;
+}
+ul.children li, 
+ul.children li a {
+  border:none;
+}
+ul.children li a {
+  text-align: left;
+}
+ul.children li:hover a,
+ul.children li:hover li:hover a {
+  color:#333;
+}
+ul.children li a,
+ul.children li:hover li a {
+  color:#EAECEB;
+}
+/* Third level */
+.top-menu ul.children li:hover ul.children,
+.nav-menu ul.children li:hover ul.children {
+  left: 100%; top:0px;
+}
 
 /* Sidebar
 ------------------------------------------- */
@@ -237,31 +260,24 @@ nav.nav-menu-wrap ul.nav-menu li {
   position:relative; height:32px;
 }
 .side aside.widget_search #s {
-  position: absolute; left: 0; right: 0; width:auto;
-  border:0px; box-shadow:none;
+  position: absolute; left:0; right:0; width:auto; border:0px; box-shadow:none;
 }
 
 /* Article
 ------------------------------------------- */
 body .main article {
-  padding-top:20px; border-top:1px solid #EAECEB; 
-  margin:0px; border-bottom:0px; padding-bottom: 20px;
+  border-top:1px solid #EAECEB; border-bottom:none; margin:0px; padding:20px 0px;
 }
 body.singular .body article,
 body.singular.page .body article {
   padding-top:0px;
-}
-.article-content {
-  
 }
 .article-content.thumbnail {
   float:right; width:410px;
 }
 .article-meta span,
 .article-date span {
-  font-size: 12px; margin-right:10px; padding: 10px;
-  background-color:#EAECEB;
-  border-radius: 5px;
+  font-size: 12px; margin-right:10px; padding: 10px; background-color:#EAECEB; border-radius: 5px;
 }
 .article-meta span.icon {
   display:inline-block; margin-bottom: 5px;
@@ -276,9 +292,7 @@ img.avatar {
 .attachment-post-thumbnail,
 .frame,
 img.avatar {
-  padding:10px;
-  background-color:#EAECEB;
-  border:1px solid #DADADA;
+  padding:10px; background-color:#EAECEB; border:1px solid #DADADA;
 }
 body .article-meta span a,
 body .article-date span a{
@@ -323,6 +337,20 @@ body #comment,
   padding-right:5px;
   color:#8C9CA5;
 }
+
+/* Orbit Slideshow
+------------------------------------------- */
+.content {
+  display:block; width:980px !important; height:400px !important; overflow:hidden; /* Remove: only for purpose of flickr placholder  */
+}
+.featured { 
+  width: 980px;
+  height: 400px;
+  background: #111 url('js/orbit/orbit/loading.gif') no-repeat center center;
+  overflow: hidden; }
+.featured>img,  
+.featured>div,
+.featured>a { display: none; }
 
 
 /* Internet Explorer 
