@@ -17,7 +17,7 @@
     <p class="article-meta">
       <span class="icon icon-user"><a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))) ?>"><?php the_author(); ?></a></span>
       <span class="icon icon-printer"><?php the_category(', '); ?></span>
-      <?php if(has_tag()): ?><span class="icon icon-tag"><?php the_tags('',' ',''); ?></span><?php endif; ?>
+      <?php if(has_tag()): ?><span class="icon icon-tag"><?php the_tags('',', ',''); ?></span><?php endif; ?>
       <span class="icon icon-comments"><?php comments_popup_link(get_comments_number( '0 comments', '1 comment', '% comments' )); ?></span>
       <?php // comments_popup_link( '<span class="leave-reply">' . __( 'Reply', 'twentyeleven' ) . '</span>', _x( '1', 'comments number', 'twentyeleven' ), _x( '%', 'comments number', 'twentyeleven' ) ); ?>
     </p>
