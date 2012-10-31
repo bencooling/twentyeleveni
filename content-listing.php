@@ -12,7 +12,7 @@ $classname = (has_post_thumbnail()) ? 'thumbnail' : '';
   <?php // TODO: Full width for post without post thumbnail ?>
   <?php if(has_post_thumbnail()) the_post_thumbnail(); ?>
   <div class="article-content <?php echo $classname; ?>">
-    <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
     <?php if($post->post_type==='post'): ?>
       <p class="article-date"><span class="icon-calendar"><?php the_date('Y-m-d'); ?></span></p>
     <?php endif; ?>

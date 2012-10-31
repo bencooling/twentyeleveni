@@ -92,7 +92,7 @@ h1 {
   color: #C3CDD3; font-weight: lighter;
 }
 h2 {
-  font-size: 36px; line-height: 54px; 
+  font-size: 42px; line-height: 54px; 
   color: #C3CDD3;
 }
 h3 {
@@ -100,17 +100,24 @@ h3 {
   color: #C3CDD3;
 }
 h5 {
-  font: bold 14px/14px 'Helvetica Neue', sans-serif; text-align: right; 
-  color: #2C2F31;
+  font: normal 14px/14px 'Helvetica Neue', sans-serif; text-align: right; 
+  /*color: #2C2F31;*/ color:#555;
 }
 h6 {
-  padding: 5px 10px; color: #2C2F31; font-size:16px; background-color:#DEE0DF; border-radius:5px; text-align: center
+  padding: 5px 10px; color:#8C9CA5; font-size:18px; background-color:#DEE0DF; border-radius:5px; text-align: center
 }
 .side h6 {
   border-radius:5px 5px 0 0;
 }
-body a, body a:hover {
-  color:#8C9CA5; text-decoration: none; cursor:pointer;
+body a {
+  color:#6798BD;
+}
+body a, 
+h3 a:hover, h2 a:hover {
+  text-decoration:none;
+}
+body a:hover {
+  text-decoration:underline;
 }
 p, blockquote {
   margin-bottom:10px;
@@ -119,7 +126,7 @@ p, blockquote {
 /* Structure
 ------------------------------------------- */
 body {
-  background:#fff url('images/furley_bg.png'); color: #2C2F31; background:white; font-size:14px;
+  background:#fff url('images/furley_bg.png'); color: #777; background:white; font-size:14px;
 }
 .main {
   float:left; width: 600px; padding:20px;
@@ -294,10 +301,10 @@ img.avatar {
 img.avatar {
   padding:10px; background-color:#EAECEB; border:1px solid #DADADA;
 }
-body .article-meta span a,
+/*body .article-meta span a,
 body .article-date span a{
   color:#444;
-}
+}*/
 .main article:first-child {
   border-top:0px; 
 }

@@ -8,7 +8,7 @@
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('group'); ?>>
-  <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+  <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
   <?php if($post->post_type==='post'): ?>
     <p class="article-date"><span class="icon-calendar"><?php the_date('Y-m-d'); ?></span></p>
   <?php endif; ?>
