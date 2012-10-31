@@ -12,7 +12,7 @@ get_header(); ?>
 <div class="main">
 	<?php if (have_posts()): the_post(); ?>
 
-		<h2><?php printf( __( '%s', 'twentyeleven' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h2>
+		<h2><?php echo get_the_author(); ?></h2>
 		<?php rewind_posts(); ?>
 		
     <div class="articles">

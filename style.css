@@ -53,7 +53,10 @@ input[type=text] {
   height:30px; background-color:#111;
 }
 .head {
-  height:100px; background-color:#F7F9F8;
+  height:100px; background-color:#F7F9F8; padding-top: 40px;
+}
+.home .head {
+  padding-top: 0px;
 }
 .featured-wrap {
   background-color:#111;
@@ -95,9 +98,13 @@ h2 {
   font-size: 42px; line-height: 54px; 
   color: #C3CDD3;
 }
-h3 {
+h3,
+h3#reply-title {
   font-size: 30px; line-height: 36px; 
   color: #C3CDD3;
+}
+body h3#reply-title {
+  font-weight: normal; margin-bottom: 0px;
 }
 h5 {
   font: normal 14px/14px 'Helvetica Neue', sans-serif; text-align: right; 
@@ -149,7 +156,6 @@ body {
 ------------------------------------------- */
 .top,
 .nav,
-/*.side h6,*/
 .foot {
   background-image: -webkit-linear-gradient(bottom, #2C2F31 0%, #111 100%);
   background-image: -moz-linear-gradient(bottom, #2C2F31 0%, #111 100%);
@@ -167,14 +173,16 @@ nav.nav-menu-wrap ul.nav-menu {
 nav.nav-menu-wrap ul.nav-menu li {
   display:block; float:left;
 }
-
-.top-menu, .top ul,
 .nav-menu, .nav ul {
   list-style:none; text-align:center; padding:0px;
 }
-.top-menu ul {
-  float:right;
+.top .top-menu {
+  width:980px; margin:0 auto;
 }
+.top > div > ul {
+  width:980px; text-align:right; padding:0px;
+}
+
 .top-menu li,
 .nav-menu li {
   display:inline-block; height:100%; 
@@ -197,7 +205,6 @@ nav.nav-menu-wrap ul.nav-menu li {
 .nav-menu a:hover {
   text-decoration: none; background-color: rgba(255,255,255,0.1);
 }
-
 .top-menu a {
   line-height:30px; font-size:12px;
 }
@@ -206,7 +213,7 @@ nav.nav-menu-wrap ul.nav-menu li {
 }
 /* Dropdown support */
 ul.children {
-  position:absolute; left:-9999em; z-index:2; width:188px; height:auto;
+  position:absolute; left:-9999em; z-index:2; width:188px; height:auto; padding:0px;
 }
 .top-menu li:hover > ul.children,
 .nav-menu li:hover > ul.children {
@@ -301,10 +308,6 @@ img.avatar {
 img.avatar {
   padding:10px; background-color:#EAECEB; border:1px solid #DADADA;
 }
-/*body .article-meta span a,
-body .article-date span a{
-  color:#444;
-}*/
 .main article:first-child {
   border-top:0px; 
 }
@@ -328,6 +331,12 @@ body #comment,
 #respond input[type="text"], 
 #respond textarea {
   border-color:#DEE0DF;
+}
+#respond input#submit {
+  background-color:#6798BD;
+}
+.edit-link {
+  display: none; /* Force remove edit-links in comments list */
 }
 
 /* Footer

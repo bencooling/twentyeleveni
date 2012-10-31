@@ -1,11 +1,11 @@
 @TODO
-Fix headings
+Y Fix headings
 Support dropdown menus for ie7
 change rgba values to hex values for <ie9 support 
-Many Categories on single post page
-Edit link on trackback list
+Y Many Categories on single post page
+Y Edit link on trackback list
 Protected Password Page form
-Page with comments and comments disabled make sure form or message is displayed
+Y Page with comments and comments disabled make sure form or message is displayed
 Check all functions methods are called upon appropraite actions, i.e. register sidebar should be invoked by widgets_init
 Mention removed Edit post links, admin bar
 Consider making it a parent theme on its own (Copy languages file from Twenty Eleven)
