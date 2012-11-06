@@ -38,8 +38,8 @@ function tweli_child_theme_setup() {
 // prevent wordpress from outputting meta tag version info
 remove_action('wp_header', 'wp_generator');
 
-// register three nav_menus: top, nav
-register_nav_menus(array('top'=>'Top','nav'=>'Navigation'));
+// register three nav_menus: nav
+register_nav_menus(array('nav'=>'Navigation'));
 
 // register single sidebar: sidebar
 register_sidebar(array(

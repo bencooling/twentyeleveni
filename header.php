@@ -33,10 +33,6 @@
 ?>
 </head>
 <body <?php body_class(); ?>>
-  <div class="top">
-    <?php // Add a menu to enable the container class ?>
-    <?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_class' => 'top-menu', 'container' => 'div', 'container_class' => 'wrap' )); ?>
-  </div>
 
   <header class="head wrap">
     <hgroup>
