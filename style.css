@@ -111,10 +111,12 @@ h5 {
   color:#555;
 }
 h6 {
-  padding: 5px 10px; color:#8C9CA5; font-size:18px; background-color:#DEE0DF; border-radius:5px; text-align: center
+  padding: 5px 10px; color:#8C9CA5; font-size:18px; background-color:#DEE0DF; text-align: center;
+  border-bottom: 1px solid rgba(150, 150, 150, 0.1);
+  /*border-radius:5px;*/
 }
 .side h6 {
-  border-radius:5px 5px 0 0;
+  /*border-radius:5px 5px 0 0;*/
 }
 body a {
   color:#6798BD;
@@ -255,11 +257,11 @@ ul.children li:hover li a {
   list-style:none;
 }
 .side aside ul {
-  padding:10px;
+  padding:10px; border-top: 1px solid rgba(255, 255, 255, 0.4);
 }
 .side aside {
   background-color:#EAECEB;
-  border-radius: 5px;
+  border: 1px solid rgba(150, 150, 150, 0.1);
 }
 .side aside a {
   font-weight: normal;
@@ -271,7 +273,7 @@ ul.children li:hover li a {
   box-shadow:none;
 }
 .side aside.widget_search form {
-  position:relative; height:32px;
+  position:relative; height:32px; margin:0px; /* twentyeleveni overide */
 }
 .side aside.widget_search #s {
   position: absolute; left:0; right:0; width:auto; border:0px; box-shadow:none;
@@ -291,7 +293,7 @@ body.singular.page .body article {
 }
 .article-meta span,
 .article-date span {
-  font-size: 12px; margin-right:10px; padding: 10px; background-color:#EAECEB; border-radius: 5px;
+  font-size: 12px; margin-right:10px; padding: 7px 12px; background-color:#EAECEB; border: 1px solid rgba(150, 150, 150, 0.1);
 }
 .article-meta span.icon {
   display:inline-block; margin-bottom: 5px;
