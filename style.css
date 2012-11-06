@@ -70,7 +70,7 @@ input[type=text] {
 }
 .side {}
 .foot {
-  height:50px; line-height:50px; font-size:12px; text-align:center; background-color:#777; color:white;
+  height:50px; line-height:50px; font-size:12px; text-align:center; background-color:#2C2F31; color:white;
 }
 
 /* Utilty classes
@@ -159,11 +159,11 @@ body {
 .top,
 .nav,
 .foot {
-  background-image: -webkit-linear-gradient(bottom, #2C2F31 0%, #111 100%);
+/*  background-image: -webkit-linear-gradient(bottom, #2C2F31 0%, #111 100%);
   background-image: -moz-linear-gradient(bottom, #2C2F31 0%, #111 100%);
   background-image: -o-linear-gradient(bottom, #2C2F31 0%, #111 100%);
   background-image: -ms-linear-gradient(bottom, #2C2F31 0%, #111 100%);
-  background-image: linear-gradient(bottom, #2C2F31 0%, #111 100%);
+  background-image: linear-gradient(bottom, #2C2F31 0%, #111 100%);*/
 }
 
 nav.nav-menu-wrap {
