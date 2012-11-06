@@ -49,7 +49,7 @@ register_sidebar(array(
   'before_title' => '<h6>',
   'after_title' => '</h6>',
   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-  'after_widget' => '</aside>',
+  'after_widget' => '</aside>'
 ));
 
 // add the page title as a body class

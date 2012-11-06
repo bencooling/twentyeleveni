@@ -291,8 +291,7 @@ body.singular.page .body article {
 .article-content.thumbnail {
   float:right; width:410px;
 }
-.article-meta span,
-.article-date span {
+span.icon {
   font-size: 12px; margin-right:10px; padding: 7px 12px; background-color:#EAECEB; border: 1px solid rgba(150, 150, 150, 0.1);
 }
 .article-meta span.icon {

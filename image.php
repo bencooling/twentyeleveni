@@ -16,7 +16,7 @@ get_header(); ?>
 				<h2><?php the_title(); ?></h2>
 
         <p class="article-meta">
-          <span class="icon-calendar"><?php the_date('Y-m-d'); ?></span>
+          <span class="icon icon-calendar"><?php the_date('Y-m-d'); ?></span>
           <span class="icon icon-user"><a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))) ?>"><?php the_author(); ?></a></span>
           <span class="icon icon-comments"><?php comments_popup_link(get_comments_number( '0 comments', '1 comment', '% comments' )); ?></span>
           <?php // comments_popup_link( '<span class="leave-reply">' . __( 'Reply', 'twentyeleven' ) . '</span>', _x( '1', 'comments number', 'twentyeleven' ), _x( '%', 'comments number', 'twentyeleven' ) ); ?>

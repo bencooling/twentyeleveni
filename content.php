@@ -10,7 +10,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('group'); ?>>
   <h2><?php the_title(); ?></h2>
   <?php if($post->post_type==='post'): ?>
-    <p class="article-date"><span class="icon-calendar"><?php the_date('Y-m-d'); ?></span></p>
+    <p class="article-date"><span class="icon icon-calendar"><?php the_date('Y-m-d'); ?></span></p>
   <?php endif; ?>
   <?php the_content('read more'); ?>
   <?php if($post->post_type==='post'): ?>

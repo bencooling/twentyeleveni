@@ -14,7 +14,7 @@ $classname = (has_post_thumbnail()) ? 'thumbnail' : '';
   <div class="article-content <?php echo $classname; ?>">
     <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
     <?php if($post->post_type==='post'): ?>
-      <p class="article-date"><span class="icon-calendar"><?php the_date('Y-m-d'); ?></span></p>
+      <p class="article-date"><span class="icon icon-calendar"><?php the_date('Y-m-d'); ?></span></p>
     <?php endif; ?>
     <?php // the_content('read more'); ?>
     <?php the_excerpt(); ?>
