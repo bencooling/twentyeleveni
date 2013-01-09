@@ -33,6 +33,21 @@ function tweli_child_theme_setup() {
   }
  
 
+   // page_title | site_name wp_title('|', true, 'right');
+  function tweli_wp_title( $title, $sep ) {
+    global $paged, $page;
+    if (is_feed()) return $title;
+    
+    // Add a page number if necessary.
+    if ( $paged >= 2 || $page >= 2 ) $title = "$title " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
+
+    // Add the title | site name
+    $title .= get_bloginfo('name');
+
+    return $title;
+  }
+  add_filter( 'wp_title', 'tweli_wp_title', 10, 2 );
+
 }
 
 // prevent wordpress from outputting meta tag version info
